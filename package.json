@@ -22,7 +22,6 @@
     "typecheck": "tsc -b && tsc -b cypress",
     "validate": "run-p \"test -- --run\" lint typecheck test:e2e:run"
   },
-  "prettier": {},
   "eslintIgnore": [
     "/node_modules",
     "/build",
@@ -35,6 +34,7 @@
     "@remix-run/serve": "^1.7.2",
     "@remix-run/server-runtime": "^1.7.2",
     "bcryptjs": "^2.4.3",
+    "classnames": "^2.3.2",
     "isbot": "^3.5.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -44,6 +44,7 @@
     "@faker-js/faker": "^7.5.0",
     "@remix-run/dev": "^1.7.2",
     "@remix-run/eslint-config": "^1.7.2",
+    "@tailwindcss/typography": "^0.5.7",
     "@testing-library/cypress": "^8.0.3",
     "@testing-library/dom": "^8.18.1",
     "@testing-library/jest-dom": "^5.16.5",
