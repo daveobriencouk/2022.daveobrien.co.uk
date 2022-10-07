@@ -1,4 +1,4 @@
-app = "2022-daveobrien-co-uk-030d"
+app = "2022-daveobriencouk"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = [ ]
