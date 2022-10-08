@@ -5,14 +5,23 @@ import { Container } from '~/components/atoms/Container'
 import { Hero } from '~/components/molecules/Hero'
 import { Navigation } from '~/components/molecules/Navigation'
 
-import { useOptionalUser } from '~/utils'
+import { navigationLinks } from '~/consts'
 
 import type { ListLinkProps } from '~/types'
 
-const navigationLinks: ListLinkProps[] = [
-  { name: 'CV', to: '/cv' },
-  { name: 'Notes', to: '/notes' },
-  { name: 'Projects', to: '/projects' },
+const readMoreLinks: ListLinkProps[] = [
+  {
+    name: 'My CV - extended readme',
+    to: '/cv',
+  },
+  {
+    name: "Some projects I've worked on",
+    to: '/projects',
+  },
+  {
+    name: 'Notes from the code face',
+    to: '/notes',
+  },
 ]
 
 const Logo = () => {
@@ -31,24 +40,7 @@ const Logo = () => {
   )
 }
 
-const readMoreLinks: ListLinkProps[] = [
-  {
-    name: 'My CV - extended readme',
-    to: '/cv',
-  },
-  {
-    name: "Some projects I've worked on",
-    to: '/projects',
-  },
-  {
-    name: 'Notes from the code face',
-    to: '/notes',
-  },
-]
-
-export default function Index() {
-  const user = useOptionalUser()
-
+export default function IndexRoute() {
   return (
     <Container>
       <Hero
@@ -86,14 +78,14 @@ export default function Index() {
 
           <h3>I've worked with</h3>
 
-          <ul className="not-prose flex flex-wrap w-full list-none justify-center gap-2 p-0">
-            <li className="w-28 h-12 text-center p-2 text-sm bg-slate-200">Vodafone</li>
-            <li className="w-28 h-12 text-center p-2 text-sm bg-slate-200">VOXI</li>
-            <li className="w-28 h-12 text-center p-2 text-sm bg-slate-200">MMT Digital</li>
-            <li className="w-28 h-12 text-center p-2 text-sm bg-slate-200">Maersk</li>
-            <li className="w-28 h-12 text-center p-2 text-sm bg-slate-200">Virgin Media</li>
-            <li className="w-28 h-12 text-center p-2 text-sm bg-slate-200">NTL:Telewest</li>
-            <li className="w-28 h-12 text-center p-2 text-sm bg-slate-200">Telewest</li>
+          <ul className="not-prose flex w-full list-none flex-wrap justify-center gap-2 p-0">
+            <li className="h-12 w-28 bg-slate-200 p-2 text-center text-sm">Vodafone</li>
+            <li className="h-12 w-28 bg-slate-200 p-2 text-center text-sm">VOXI</li>
+            <li className="h-12 w-28 bg-slate-200 p-2 text-center text-sm">MMT Digital</li>
+            <li className="h-12 w-28 bg-slate-200 p-2 text-center text-sm">Maersk</li>
+            <li className="h-12 w-28 bg-slate-200 p-2 text-center text-sm">Virgin Media</li>
+            <li className="h-12 w-28 bg-slate-200 p-2 text-center text-sm">NTL:Telewest</li>
+            <li className="h-12 w-28 bg-slate-200 p-2 text-center text-sm">Telewest</li>
           </ul>
         </div>
       </div>
