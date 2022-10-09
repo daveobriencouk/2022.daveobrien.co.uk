@@ -27,7 +27,10 @@ export async function action({ request }: ActionArgs) {
     );
   }
 
-  const note = await createNote({ title, body, userId });
+  // TODO: Change this to use a generated slug
+  const slug = 'slug'
+
+  const note = await createNote({ title, slug, body, userId });
 
   return redirect(`/notes/${note.id}`);
 }

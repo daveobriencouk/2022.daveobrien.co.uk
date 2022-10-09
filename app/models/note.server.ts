@@ -4,13 +4,23 @@ import { prisma } from '~/db.server'
 
 export type { Note } from '@prisma/client'
 
-export function getNote({
-  slug,
-}: Pick<Note, 'slug'>) {
+export function getNote(slug: string) {
   return prisma.note.findFirst({
     select: { id: true, body: true, title: true },
     where: { slug },
   })
+}
+
+export function getUserNote({
+  id,
+  userId,
+}: Pick<Note, "id"> & {
+  userId: User["id"];
+}) {
+  return prisma.note.findFirst({
+    select: { id: true, body: true, title: true },
+    where: { id, userId },
+  });
 }
 
 export function getAllNoteListItems() {
@@ -30,14 +40,16 @@ export function getNoteListItems({ userId }: { userId: User['id'] }) {
 
 export function createNote({
   body,
+  slug,
   title,
   userId,
-}: Pick<Note, 'body' | 'title'> & {
+}: Pick<Note, 'body' | 'slug' | 'title'> & {
   userId: User['id']
 }) {
   return prisma.note.create({
     data: {
       title,
+      slug,
       body,
       user: {
         connect: {
