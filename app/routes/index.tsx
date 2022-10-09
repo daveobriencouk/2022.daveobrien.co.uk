@@ -2,10 +2,10 @@ import { Link, useLocation } from '@remix-run/react'
 
 import { ConditionalWrap } from '~/components/atoms/ConditionalWrap'
 import { Container } from '~/components/atoms/Container'
+import { Page } from '~/components/atoms/Page'
 import { Hero } from '~/components/molecules/Hero'
 import { Navigation } from '~/components/molecules/Navigation'
-
-import { navigationLinks } from '~/consts'
+import { useFeatureFlags } from '~/utils'
 
 import type { ListLinkProps } from '~/types'
 
@@ -13,14 +13,17 @@ const readMoreLinks: ListLinkProps[] = [
   {
     name: 'My CV - extended readme',
     to: '/cv',
+    featureFlag: 'section_cv',
   },
   {
     name: "Some projects I've worked on",
     to: '/projects',
+    featureFlag: 'section_project',
   },
   {
     name: 'Notes from the code face',
     to: '/notes',
+    featureFlag: 'section_notes',
   },
 ]
 
@@ -41,6 +44,8 @@ const Logo = () => {
 }
 
 export default function IndexRoute() {
+  const { checkSomeFeatureFlags, filterListLinksByFeatureFlag } = useFeatureFlags()
+
   return (
     <Container>
       <Hero
