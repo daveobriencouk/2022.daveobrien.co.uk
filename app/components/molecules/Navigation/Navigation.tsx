@@ -14,7 +14,7 @@ export const Navigation = ({ links = navigationLinks }: NavigationProps) => {
   const { filterListLinksByFeatureFlag } = useFeatureFlags()
 
   return (
-    <nav className="hidden lg:flex lg:space-x-4" aria-label="Global">
+    <nav className="hidden md:flex lg:space-x-4" aria-label="Global">
       {links.filter(filterListLinksByFeatureFlag).map((link) => (
         <NavLink
           key={link.name}

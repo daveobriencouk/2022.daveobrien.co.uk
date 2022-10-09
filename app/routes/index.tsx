@@ -67,6 +67,8 @@ export default function IndexRoute() {
             <section className="prose mb-8 lg:prose-xl">
               <h2>Hello. I'm Dave, and I'm a JavaScript engineer.</h2>
 
+              <p>Add https://www.algolia.com/pricing/</p>
+
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati non odio amet quas beatae ullam
                 porro? Omnis magnam adipisci quaerat error. Cumque, voluptate. Voluptates esse velit qui doloremque quas
