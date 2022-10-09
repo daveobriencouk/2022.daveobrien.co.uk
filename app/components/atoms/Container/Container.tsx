@@ -1,11 +1,15 @@
+import classNames from 'classnames'
+
 type ContainerProps = {
   children: React.ReactNode
+  className?: string
+  isFlushBelowSmall?: boolean
 }
 
-export function Container({ children }: ContainerProps) {
+export const Container = ({ children, className, isFlushBelowSmall }: ContainerProps) => {
   return (
-    <main className="relative min-h-screen bg-white sm:flex sm:justify-center">
-      <div className="relative sm:pb-12 sm:pt-6 lg:pb-16 lg:pt-8">{children}</div>
-    </main>
+    <div className={classNames('mx-auto max-w-7xl sm:px-6 lg:px-8', isFlushBelowSmall ? 'sm:px-6' : 'px-6', className)}>
+      {children}
+    </div>
   )
 }

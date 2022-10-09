@@ -1,6 +1,6 @@
 import type { LinksFunction, LoaderArgs, MetaFunction } from '@remix-run/node'
 import { json } from '@remix-run/node'
-import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react'
+import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from '@remix-run/react'
 import flagsmith from 'flagsmith'
 import { FlagsmithProvider } from 'flagsmith/react'
 
@@ -20,14 +20,19 @@ export const meta: MetaFunction = () => ({
 export async function loader({ request }: LoaderArgs) {
   return json({
     user: await getUser(request),
+    ENV: {
+      FLAGSMITH_ENVIRONMENT_ID: process.env.FLAGSMITH_ENVIRONMENT_ID,
+    },
   })
 }
 
 export default function App() {
+  const data = useLoaderData()
+
   return (
     <FlagsmithProvider
       options={{
-        environmentID: 'nAiUiThBv4xdHX6wjaCWEs',
+        environmentID: data.ENV.FLAGSMITH_ENVIRONMENT_ID,
       }}
       flagsmith={flagsmith}
     >
@@ -39,6 +44,11 @@ export default function App() {
         <body className="h-full">
           <Outlet />
           <ScrollRestoration />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.ENV = ${JSON.stringify(data.ENV)}`,
+            }}
+          />
           <Scripts />
           <LiveReload />
         </body>
