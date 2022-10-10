@@ -9,7 +9,10 @@ describe('smoke tests', () => {
   })
 
   it('should allow you to visit notes index page', () => {
+    cy.intercept('/api/v1/flags/', { fixture: 'flag-note-on.json' }).as('flags')
     cy.visitAndCheck('/')
+
+    cy.wait('@flags')
 
     cy.findByText('Notes').click().wait(1000)
 
@@ -18,7 +21,10 @@ describe('smoke tests', () => {
   })
 
   it('should allow you to visit a notes page', () => {
+    cy.intercept('/api/v1/flags/', { fixture: 'flag-note-on.json' }).as('flags')
     cy.visitAndCheck('/')
+
+    cy.wait('@flags')
 
     cy.findByText('Notes').click().wait(1000)
 
