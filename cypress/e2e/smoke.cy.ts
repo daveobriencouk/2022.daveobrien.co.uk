@@ -1,15 +1,16 @@
 describe('smoke tests', () => {
   beforeEach(() => {
     cy.viewport('macbook-16')
+    cy.intercept('/api/v1/flags/', { fixture: 'flag-note-on.json' }).as('flags')
   })
 
   it('should allow you to visit home page', () => {
     cy.visitAndCheck('/')
+
     cy.contains("Hello. I'm Dave, and I'm a JavaScript engineer.")
   })
 
   it('should allow you to visit notes index page', () => {
-    cy.intercept('/api/v1/flags/', { fixture: 'flag-note-on.json' }).as('flags')
     cy.visitAndCheck('/')
 
     cy.wait('@flags')
@@ -21,7 +22,6 @@ describe('smoke tests', () => {
   })
 
   it('should allow you to visit a notes page', () => {
-    cy.intercept('/api/v1/flags/', { fixture: 'flag-note-on.json' }).as('flags')
     cy.visitAndCheck('/')
 
     cy.wait('@flags')
