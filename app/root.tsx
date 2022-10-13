@@ -7,8 +7,16 @@ import { FlagsmithProvider } from 'flagsmith/react'
 import tailwindStylesheetUrl from './styles/tailwind.css'
 import { getUser } from './session.server'
 
+const fontFamilies = ['Archivo+Black', 'Fira+Sans+Extra+Condensed:400', 'Hind+Guntur:400,700']
+
 export const links: LinksFunction = () => {
-  return [{ rel: 'stylesheet', href: tailwindStylesheetUrl }]
+  return [
+    { rel: 'stylesheet', href: tailwindStylesheetUrl },
+    {
+      rel: 'stylesheet',
+      href: `https://fonts.googleapis.com/css?family=${fontFamilies.join('|')}`,
+    },
+  ]
 }
 
 export const meta: MetaFunction = () => ({

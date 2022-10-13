@@ -24,6 +24,13 @@ async function seed() {
     },
   })
 
+  await prisma.tag.create({
+    data: {
+      title: 'React',
+      slug: 'react',
+    }, 
+  })
+
   await prisma.note.create({
     data: {
       title: 'My first note',
