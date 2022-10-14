@@ -24,7 +24,7 @@ async function seed() {
     },
   })
 
-  await prisma.tag.create({
+  await prisma.noteTag.create({
     data: {
       title: 'React',
       slug: 'react',
