@@ -1,6 +1,10 @@
 import type { ListLinkProps } from '~/types'
 
 export const navigationLinks: ListLinkProps[] = [
+  // {
+  //   name: 'Home',
+  //   to: '/',
+  // },
   {
     name: 'CV',
     to: '/cv',

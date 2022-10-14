@@ -8,7 +8,7 @@ type ContainerProps = {
 
 export const Container = ({ children, className, isFlushBelowSmall }: ContainerProps) => {
   return (
-    <div className={classNames('mx-auto max-w-7xl sm:px-6 lg:px-8', isFlushBelowSmall ? 'sm:px-6' : 'px-6', className)}>
+    <div className={classNames('max-w-screen-md mx-auto sm:px-6 lg:px-8', isFlushBelowSmall ? 'sm:px-6' : 'px-6', className)}>
       {children}
     </div>
   )

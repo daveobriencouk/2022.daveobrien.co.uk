@@ -7,7 +7,7 @@ import { FlagsmithProvider } from 'flagsmith/react'
 import tailwindStylesheetUrl from './styles/tailwind.css'
 import { getUser } from './session.server'
 
-const fontFamilies = ['Archivo+Black', 'Fira+Sans+Extra+Condensed:400', 'Hind+Guntur:400,700', 'Overlock:i400,i700,i900', 'Pridi:400,700,i400,i700']
+const fontFamilies = ['Archivo+Black', 'Fira+Sans+Extra+Condensed:400', 'Hind+Guntur:400,700', 'Overlock:i400,i700,i900', 'Pridi:200,400,i200,i400']
 
 export const links: LinksFunction = () => {
   return [

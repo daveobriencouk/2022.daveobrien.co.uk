@@ -3,5 +3,5 @@ type PageProps = {
 }
 
 export const Page = ({ children }: PageProps) => {
-  return <div className="lg:pt relative min-h-screen bg-zinc-100 sm:pb-12 lg:pb-16">{children}</div>
+  return <div className="relative min-h-screen bg-zinc-100 sm:pb-12 lg:pb-16">{children}</div>
 }
