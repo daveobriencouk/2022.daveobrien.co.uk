@@ -65,13 +65,13 @@ export default function IndexRoute() {
                 <h3>I've worked with</h3>
 
                 <ul className="not-prose flex w-full list-none flex-wrap justify-center gap-2 p-0">
-                  <li className="h-12 w-28 bg-zinc-200 p-2 text-center text-sm">Vodafone</li>
-                  <li className="h-12 w-28 bg-zinc-200 p-2 text-center text-sm">VOXI</li>
-                  <li className="h-12 w-28 bg-zinc-200 p-2 text-center text-sm">MMT Digital</li>
-                  <li className="h-12 w-28 bg-zinc-200 p-2 text-center text-sm">Maersk</li>
-                  <li className="h-12 w-28 bg-zinc-200 p-2 text-center text-sm">Virgin Media</li>
-                  <li className="h-12 w-28 bg-zinc-200 p-2 text-center text-sm">NTL:Telewest</li>
-                  <li className="h-12 w-28 bg-zinc-200 p-2 text-center text-sm">Telewest</li>
+                  <li className="h-12 w-28 bg-stone-200 p-2 text-center text-sm">Vodafone</li>
+                  <li className="h-12 w-28 bg-stone-200 p-2 text-center text-sm">VOXI</li>
+                  <li className="h-12 w-28 bg-stone-200 p-2 text-center text-sm">MMT Digital</li>
+                  <li className="h-12 w-28 bg-stone-200 p-2 text-center text-sm">Maersk</li>
+                  <li className="h-12 w-28 bg-stone-200 p-2 text-center text-sm">Virgin Media</li>
+                  <li className="h-12 w-28 bg-stone-200 p-2 text-center text-sm">NTL:Telewest</li>
+                  <li className="h-12 w-28 bg-stone-200 p-2 text-center text-sm">Telewest</li>
                 </ul>
               </section>
             )}

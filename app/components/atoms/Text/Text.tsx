@@ -10,19 +10,19 @@ type TextProps = {
 function getAppearanceClassNames(appearance: TextProps['appearance']) {
   switch (appearance) {
     case 'h1':
-      return 'text-4xl font-display tracking-tighter text-gray-900'
+      return 'text-4xl font-display tracking-tighter text-stone-900'
     case 'h2':
-      return 'text-2xl font-heading text-gray-900'
+      return 'text-2xl font-heading text-stone-900'
     case 'h3':
-      return 'text-2xl font-heading text-gray-900'
+      return 'text-2xl font-heading text-stone-900'
     case 'h4':
-      return 'text-lg font-heading text-gray-900'
+      return 'text-lg font-heading text-stone-900'
     case 'h5':
-      return 'text-base font-heading text-gray-900'
+      return 'text-base font-heading text-stone-900'
     case 'h6':
-      return 'text-sm font-heading text-gray-900'
+      return 'text-sm font-heading text-stone-900'
     case 'p':
-      return 'text-base font-body text-gray-900'
+      return 'text-base font-body text-stone-900'
     default:
       return ''
   }

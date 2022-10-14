@@ -14,6 +14,10 @@ type NavigationProps = {
 export const Navigation = ({ className, links = navigationLinks }: NavigationProps) => {
   const { filterListLinksByFeatureFlag } = useFeatureFlags()
 
+  // TODO: Animate navigation in
+  // TODO: Sort out font
+  // TODO: Animate on hover
+
   return (
     <nav className={classNames('relative z-50', className)} aria-label="Global">
       <ol className="flex justify-end space-x-1">
@@ -21,12 +25,13 @@ export const Navigation = ({ className, links = navigationLinks }: NavigationPro
           <li key={link.name}>
             <NavLink
               to={link.to}
-              className={({ isActive }) => 
+              className={({ isActive }) =>
                 classNames(
-                  isActive ? 'bg-zinc-700 text-gray-50' : 'bg-zinc-400 text-gray-100 hover:bg-gray-900 hover:text-gray-50 hover:-translate-y-3',
-                  'flex items-center pt-8 pb-1 px-2 text-md font-overlock font-thin',
+                  isActive
+                    ? 'bg-red-700 text-stone-50'
+                    : 'bg-stone-400 text-stone-100 hover:-translate-y-3 hover:bg-stone-900 hover:text-stone-50',
+                  'text-md flex items-center px-2 pt-8 pb-1 font-overlock font-thin',
                   '-translate-y-4'
-                  // TODO: Add hover animation
                 )
               }
             >

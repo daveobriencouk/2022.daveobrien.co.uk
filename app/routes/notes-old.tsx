@@ -34,7 +34,7 @@ export default function NotesPage() {
       </header>
 
       <main className="flex h-full bg-white">
-        <div className="h-full w-80 border-r bg-gray-50">
+        <div className="h-full w-80 border-r bg-stone-50">
           <Link to="new" className="block p-4 text-xl text-blue-500">
             + New Note
           </Link>

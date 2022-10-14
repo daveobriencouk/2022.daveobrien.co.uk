@@ -12,18 +12,18 @@ type LogoProps = {
 const useLogoClassNames = (size: LogoProps['size']) => {
   if (size === 'small') {
     return {
-      h1: 'text-[2.12rem] mt-[0.7rem] text-zinc-500',
+      h1: 'text-[2.12rem] mt-[0.7rem] text-stone-500',
       stroke: 'right-[-2.5rem] bottom-0 w-[35px]',
       bracket: 'right-[-4.35rem] bottom-[0.5rem] w-[9px]',
-      span: 'text-zinc-400',
+      span: 'text-stone-400',
     }
   }
 
   return {
-    h1: 'text-[8.48rem] text-zinc-700',
+    h1: 'text-[8.48rem] text-stone-700',
     stroke: 'right-[-7.75rem] bottom-[-2.25rem] w-[140px]',
     bracket: 'right-[-2.55rem] bottom-[0.33rem] w-[36px]',
-    span: 'text-zinc-500',
+    span: 'text-stone-500',
   }
 }
 
@@ -41,6 +41,9 @@ const Lines = () => {
 export function Logo({ size = 'large' }: LogoProps) {
   const { pathname } = useLocation()
   const logoClassNames = useLogoClassNames(size)
+
+  // TODO: Animate logo
+  // TODO: Colour stroke based on pathname??? Or jest red
 
   return (
     <hgroup className="mb-12 flex flex-col items-center">
@@ -68,7 +71,7 @@ export function Logo({ size = 'large' }: LogoProps) {
         </ConditionalWrap>
       </h1>
       {size === 'large' && (
-        <h2 className="oblique flex text-center font-overlock text-5xl font-normal text-zinc-400">
+        <h2 className="oblique flex text-center font-overlock text-5xl font-normal text-stone-400">
           Frontend Engineer.
         </h2>
       )}

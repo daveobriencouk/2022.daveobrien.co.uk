@@ -18,6 +18,7 @@ module.exports = {
         },
       },
       fontSize: {
+        '2xl': '1.5rem',
         '4xl': '4rem',
       },
       letterSpacing: {
@@ -27,7 +28,7 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            // color: theme('colors.zinc.600'),
+            // color: theme('colors.gray.600'),
             p: {
               // fontSize: '34px', // key can be in camelCase...
               // 'text-align': 'left', // or as it is in css (but in quotes).
