@@ -7,7 +7,7 @@ describe('smoke tests', () => {
   it('should allow you to visit home page', () => {
     cy.visitAndCheck('/')
 
-    cy.contains("Hello. I'm Dave, and I'm a JavaScript engineer.")
+    cy.contains("Ahoy. I'm Dave, and I'm a Frontend Engineer.")
   })
 
   it('should allow you to visit notes index page', () => {
