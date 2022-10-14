@@ -5,9 +5,18 @@ module.exports = {
     fontFamily: {
       display: ['Archivo Black', 'sans-serif'],
       heading: ['Fira Sans Extra Condensed', 'sans-serif'],
-      body: ['Hind Guntur', 'sans-serif'],
+      overlock: ['Overlock', 'sans-serif'],
+      body: ['Pridi', 'sans-serif'],
     },
     extend: {
+      animation: {
+        'navigation-bounce': 'navigation-bounce 1s ease-in both',
+      },
+      keyframes: {
+        'navigation-bounce': {
+          // TODO: Add animation
+        },
+      },
       fontSize: {
         '4xl': '5rem',
       },
@@ -15,6 +24,17 @@ module.exports = {
         tighter: '-.15em',
         tight: '-.15em',
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            // color: theme('colors.zinc.600'),
+            p: {
+              // fontSize: '34px', // key can be in camelCase...
+              // 'text-align': 'left', // or as it is in css (but in quotes).
+            },
+          },
+        },
+      }),
     },
   },
   plugins: [require('@tailwindcss/typography')],
